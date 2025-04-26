@@ -7,13 +7,14 @@ import { IPortfolioItem } from '@/types/portfolio.types';
 import PortfolioCard from './PortfolioCard';
 import PortfolioFilter from './PortfolioFilter';
 import PortfolioModal from './PortfolioModal';
+import toast from "react-hot-toast";
 
 const PortfolioSection: React.FC = () => {
     const [projects, setProjects] = useState<IPortfolioItem[]>([]);
     const [filteredProjects, setFilteredProjects] = useState<IPortfolioItem[]>([]);
     const [selectedTech, setSelectedTech] = useState<string>('all');
     const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
+    const [error] = useState<string | null>(null);
     const [selectedProject, setSelectedProject] = useState<IPortfolioItem | null>(null);
 
     // Получение данных о проектах
@@ -24,9 +25,8 @@ const PortfolioSection: React.FC = () => {
                 const projectsData = await portfolioService.getProjects();
                 setProjects(projectsData);
                 setFilteredProjects(projectsData);
-            } catch (err) {
-                setError('Ошибка при загрузке проектов');
-                console.error(err);
+            } catch {
+                toast.error("Ошибка при загрузке проектов")
             } finally {
                 setIsLoading(false);
             }

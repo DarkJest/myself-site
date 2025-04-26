@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import {motion} from 'framer-motion';
 import {contactService} from '@/api/services/contactService';
 import {IContactFormData} from '@/types/contact.types';
+import toast from "react-hot-toast";
 
 interface FormState {
     name: string;
@@ -115,7 +116,7 @@ const ContactForm: React.FC = () => {
                     message: ''
                 });
             } else {
-                throw new Error(response.message || 'Произошла ошибка при отправке сообщения');
+                toast.error("Произошла ошибка при отправке сообщения")
             }
         } catch (error) {
             setSubmitStatus('error');
@@ -135,7 +136,7 @@ const ContactForm: React.FC = () => {
             whileInView={{opacity: 1}}
             transition={{duration: 0.6}}
             viewport={{once: true}}
-            className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 md:p-8"
+            className="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8"
         >
             <h3 className="text-xl md:text-2xl font-bold mb-6 text-gray-900 dark:text-white">
                 Напишите мне

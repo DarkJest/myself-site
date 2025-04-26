@@ -8,9 +8,8 @@ const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
 
     const socialLinks = [
-        { name: 'GitHub', url: 'https://github.com/yourusername' },
-        { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername' },
-        { name: 'Twitter', url: 'https://twitter.com/yourusername' },
+        { name: 'GitHub', url: 'https://github.com/DarkJest' },
+        { name: 'Telegram', url: 'https://t.me/AjaUguju1' },
     ];
 
     return (
@@ -27,10 +26,10 @@ const Footer: React.FC = () => {
                     <div>
                         <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">Ссылки</h3>
                         <ul className="space-y-2">
-                            <li><Link href="/about" className="text-indigo-600 dark:text-indigo-400 hover:underline">О себе</Link></li>
-                            <li><Link href="/portfolio" className="text-indigo-600 dark:text-indigo-400 hover:underline">Портфолио</Link></li>
-                            <li><Link href="/blog" className="text-indigo-600 dark:text-indigo-400 hover:underline">Блог</Link></li>
-                            <li><Link href="/contact" className="text-indigo-600 dark:text-indigo-400 hover:underline">Контакты</Link></li>
+                            <li><Link href={"/about"} className="text-indigo-600 dark:text-indigo-400 hover:underline">О себе</Link></li>
+                            <li><Link href={"/portfolio"} className="text-indigo-600 dark:text-indigo-400 hover:underline">Портфолио</Link></li>
+                            <li><Link href={"/blog"} className="text-indigo-600 dark:text-indigo-400 hover:underline">Блог</Link></li>
+                            <li><Link href={"/contact"} className="text-indigo-600 dark:text-indigo-400 hover:underline">Контакты</Link></li>
                         </ul>
                     </div>
 

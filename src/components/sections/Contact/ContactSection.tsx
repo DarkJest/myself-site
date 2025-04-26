@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ContactForm from './ContactForm';
+import ContactInfo from "@/components/sections/Contact/ContactInfo";
 
 const ContactSection: React.FC = () => {
     return (
@@ -25,6 +26,7 @@ const ContactSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <ContactForm />
+                    <ContactInfo />
                 </div>
             </div>
         </section>
